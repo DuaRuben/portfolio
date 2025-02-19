@@ -4,6 +4,7 @@ import "./globals.css";
 
 //components
 import Header from "@/components/Header";
+import ScrollToHome from "@/components/Home/ScrollToHomeOnRefresh";
 
 export const metadata: Metadata = {
   title: "Ruben's Portfolio",
@@ -22,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${jetBrainsMono.variable} antialiased`} >
+        <ScrollToHome />
         <Header />
         <main>
             {children}

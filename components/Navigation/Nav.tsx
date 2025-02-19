@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { useStairTransition } from "@/components/useStairTransition";
-import StairTransition from "@/components/StairTransition";
+import { useStairTransition } from "@/components/Animation/useStairTransition";
+import StairTransition from "@/components/Animation/StairTransition";
 
 const links = [
     { name: "home", path: "home" },

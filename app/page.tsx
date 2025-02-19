@@ -1,11 +1,11 @@
 
 import Section from "@/components/Section";
-import HomeSection from "@/components/HomeSection";
-import SkillSection from "@/components/SkillSection";
-import EducationSection from "@/components/EducationSection";
-import ProjectSection from "@/components/ProjectSection";
-import ExperienceSection from "@/components/ExperienceSection";
-import ContactSection from "@/components/ContactSection";
+import HomeSection from "@/components/Home/HomeSection";
+import SkillSection from "@/components/Skill/SkillSection";
+import EducationSection from "@/components/Education/EducationSection";
+import ProjectSection from "@/components/Project/ProjectSection";
+import ExperienceSection from "@/components/Experience/ExperienceSection";
+import ContactSection from "@/components/Contact/ContactSection";
 
 export default function Home() {
   return (

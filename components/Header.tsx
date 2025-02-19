@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
-import Nav from "@/components/Nav";
-import MobileNav from "@/components/MobileNav";
+import Nav from "@/components/Navigation/Nav";
+import MobileNav from "@/components/Navigation/MobileNav";
 
 const Header = () => {
     return (

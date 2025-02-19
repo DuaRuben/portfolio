@@ -35,7 +35,7 @@ const MobileNav = () => {
                     </VisuallyHidden>
                     <div className="mt-32 mb-40 text-center text-2xl">
                         {/* Close menu when clicking Ruben . */}
-                        <Link href="/" onClick={() => setIsOpen(false)}>
+                        <Link href="/public" onClick={() => setIsOpen(false)}>
                             <h1 className="text-4xl font-semibold cursor-pointer">
                                 Ruben <span className="text-accent-default">Dua</span>
                             </h1>

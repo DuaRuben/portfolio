@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
-import Stairs from "@/components/Stairs";
+import Stairs from "@/components/Animation/Stairs";
 
 const StairTransition = ({ isTransitioning }: { isTransitioning: boolean }) => {
     return (

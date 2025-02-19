@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import {Button} from "@/components/ui/button";
 import Nav from "@/components/Nav";
+import MobileNav from "@/components/MobileNav";
 
 const Header = () => {
     return (
@@ -15,13 +16,13 @@ const Header = () => {
                 {/*Style for Desktop navigation menu*/}
                 <div className="hidden xl:flex items-center gap-8">
                     <Nav />
-                    {/*<Link href="/contact">*/}
-                    {/*    <Button> Hire Me</Button>*/}
-                    {/*</Link>*/}
+                    <a href="/Ruben_Resume_Full_Stack.pdf" download>
+                        <Button> Download</Button>
+                    </a>
                 </div>
 
                 {/*Style for Mobile navigation menu*/}
-                <div className="xl:hidden"> mobile nav</div>
+                <div className="xl:hidden"> <MobileNav/> </div>
             </div>
         </header>
     );

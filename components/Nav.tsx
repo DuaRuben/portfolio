@@ -4,31 +4,40 @@ import React from 'react';
 import Link from 'next/link';
 import {usePathname} from "next/navigation";
 
+// const links = [
+//     {
+//         name: 'home',
+//         path: '/',
+//     },
+//     {
+//         name: 'skills',
+//         path: '/skills',
+//     },
+//     {
+//         name: 'projects',
+//         path: '/projects',
+//     },
+//     {
+//         name: 'experience',
+//         path: '/experience',
+//     },
+//     {
+//         name: 'education',
+//         path: '/education',
+//     },
+//     {
+//         name: 'contact',
+//         path: '/contact',
+//     }
+// ];
+
 const links = [
-    {
-        name: 'home',
-        path: '/',
-    },
-    {
-        name: 'skills',
-        path: '/skills',
-    },
-    {
-        name: 'projects',
-        path: '/projects',
-    },
-    {
-        name: 'experience',
-        path: '/experience',
-    },
-    {
-        name: 'education',
-        path: '/education',
-    },
-    {
-        name: 'contact',
-        path: '/contact',
-    }
+    { name: "home", path: "#home" },
+    { name: "skills", path: "#skills" },
+    { name: "projects", path: "#projects" },
+    { name: "experience", path: "#experience" },
+    { name: "education", path: "#education" },
+    { name: "contact", path: "#contact" },
 ];
 
 const Nav = () => {

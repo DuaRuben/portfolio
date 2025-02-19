@@ -7,16 +7,16 @@ import Link from "next/link";
 import { CiMenuFries } from "react-icons/ci";
 import { DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import {Button} from "@/components/ui/button";
 
 const links = [
-    { name: 'home', path: '/' },
-    { name: 'skills', path: '/skills' },
-    { name: 'projects', path: '/projects' },
-    { name: 'experience', path: '/experience' },
-    { name: 'education', path: '/education' },
-    { name: 'contact', path: '/contact' }
+    { name: "home", path: "#home" },
+    { name: "skills", path: "#skills" },
+    { name: "projects", path: "#projects" },
+    { name: "experience", path: "#experience" },
+    { name: "education", path: "#education" },
+    { name: "contact", path: "#contact" },
 ];
-
 const MobileNav = () => {
     const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
@@ -53,6 +53,9 @@ const MobileNav = () => {
                                     {link.name}
                                 </Link>
                             ))}
+                            <a href="/Ruben_Resume_Full_Stack.pdf" download>
+                                <Button> Download</Button>
+                            </a>
                         </nav>
                     </div>
                 </SheetContent>

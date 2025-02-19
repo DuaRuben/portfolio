@@ -10,7 +10,7 @@ const Header = () => {
             <div className="container mx-auto flex items-center justify-between ">
                 <Link href="/">
                     <h1 className="text-4xl font-semibold">
-                        Ruben <span className="text-accent-default">.</span></h1>
+                        Ruben <span className="text-accent-default">Dua</span></h1>
                 </Link>
 
                 {/*Style for Desktop navigation menu*/}

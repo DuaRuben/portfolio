@@ -1,13 +1,12 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { CiMenuFries } from "react-icons/ci";
 import { DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import {Button} from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 
 const links = [
     { name: "home", path: "#home" },
@@ -17,15 +16,36 @@ const links = [
     { name: "education", path: "#education" },
     { name: "contact", path: "#contact" },
 ];
+
 const MobileNav = () => {
-    const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState("home"); // Track active section
+
+    // Intersection Observer to detect the currently visible section
+    useEffect(() => {
+        const sections = document.querySelectorAll("section"); // Get all sections
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id);
+                    }
+                });
+            },
+            { threshold: 0.5 } // Trigger when at least 50% of the section is visible
+        );
+
+        sections.forEach((section) => observer.observe(section));
+
+        return () => observer.disconnect(); // Cleanup on unmount
+    }, []);
 
     return (
         <nav>
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger className="flex justify-center" onClick={() => setIsOpen(true)}>
-                    <CiMenuFries className="text-[32px] text-accent-default"/>
+                    <CiMenuFries className="text-[32px] text-accent-default" />
                 </SheetTrigger>
                 <SheetContent className="flex flex-col">
                     {/* Visually hidden title for accessibility */}
@@ -34,27 +54,26 @@ const MobileNav = () => {
                         <DialogDescription>Menu for navigating the website</DialogDescription>
                     </VisuallyHidden>
                     <div className="mt-32 mb-40 text-center text-2xl">
-                        {/* Close menu when clicking Ruben . */}
-                        <Link href="/public" onClick={() => setIsOpen(false)}>
+                        <Link href="/" onClick={() => setIsOpen(false)}>
                             <h1 className="text-4xl font-semibold cursor-pointer">
                                 Ruben <span className="text-accent-default">Dua</span>
                             </h1>
                         </Link>
                         <nav className="flex flex-col justify-center gap-8 items-center mt-28">
-                            {links.map((link, index) => (
-                                <Link
-                                    key={index}
+                            {links.map((link) => (
+                                <a
+                                    key={link.path}
                                     href={link.path}
-                                    onClick={() => setIsOpen(false)}  // Close menu on link click
+                                    onClick={() => setIsOpen(false)}
                                     className={`text-2xl capitalize hover:text-accent-default transition-all ${
-                                        link.path === pathname ? "text-accent-default border-b-2 border-accent-default" : ""
+                                        activeSection === link.name ? "text-accent-default border-b-2 border-accent-default" : ""
                                     }`}
                                 >
                                     {link.name}
-                                </Link>
+                                </a>
                             ))}
                             <a href="/Ruben_Resume_Full_Stack.pdf" download>
-                                <Button> Download</Button>
+                                <Button title="Download Ruben's Resume">Download</Button>
                             </a>
                         </nav>
                     </div>

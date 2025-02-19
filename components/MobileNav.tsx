@@ -37,7 +37,7 @@ const MobileNav = () => {
                         {/* Close menu when clicking Ruben . */}
                         <Link href="/" onClick={() => setIsOpen(false)}>
                             <h1 className="text-4xl font-semibold cursor-pointer">
-                                Ruben <span className="text-accent-default">.</span>
+                                Ruben <span className="text-accent-default">Dua</span>
                             </h1>
                         </Link>
                         <nav className="flex flex-col justify-center gap-8 items-center mt-28">

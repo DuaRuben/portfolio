@@ -19,14 +19,14 @@ const HomeSection = () => {
                 </div>
 
                 {/* Character Section */}
-                <div className="flex-1 h-[500px]">
-                    <Canvas>
+                <div className="flex-1 h-[900px]">
+                    <Canvas camera={{ position: [0, 2, 5]}}>
                         <ambientLight intensity={5} />
                         <SpotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={2} />
                         <directionalLight position={[10, 10, 10]} intensity={1} />
                         <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
                         <Suspense fallback={null}>
-                            <Character position-y={-1} scale={2} />
+                            <Character position-y={-1} position-x={0.4} scale={2} />
                         </Suspense>
                     </Canvas>
                 </div>

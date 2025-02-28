@@ -5,6 +5,7 @@ import Section from "@/components/Section";
 import Character from "@/components/Animation/Charactor";
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, SpotLight } from "@react-three/drei";
+import Socials from "@/components/Socials";
 
 
 const HomeSection = () => {
@@ -25,7 +26,9 @@ const HomeSection = () => {
                             Thanks for checking out my portfolio!
                         </p>
                         <div className="flex flex-col xl:flex-row items-center">
-                            Socials
+                            <Socials containerStyles="flex gap-6" iconStyles="w-9 h-9 border border-accent
+                            rounded-full flex justify-center items-center text-accent-default text-base hover:bg-accent-default
+                            hover:text-primary hover:transition-all duration-500" />
                         </div>
                     </div>
                     <div className="flex-1 h-[900px]  xl:ml-12">

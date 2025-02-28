@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { useStairTransition } from "@/components/Animation/useStairTransition";
-import StairTransition from "@/components/Animation/StairTransition";
 
 const links = [
     { name: "home", path: "home" },
@@ -14,14 +12,11 @@ const links = [
 ];
 
 const Nav = () => {
-    const { isTransitioning, startTransition } = useStairTransition();
     const [activeSection, setActiveSection] = useState("home");
 
-    const handleNavigation = (id: string) => {
-        setActiveSection(id); // Manually update active section
-        startTransition(() => {
-            document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-        });
+    const handleNavigation = (id:string) => {
+        setActiveSection(id);
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     };
 
     useEffect(() => {
@@ -56,7 +51,6 @@ const Nav = () => {
                     {link.name}
                 </button>
             ))}
-            <StairTransition isTransitioning={isTransitioning} />
         </nav>
     );
 };

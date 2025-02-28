@@ -13,7 +13,7 @@ const HomeSection = () => {
         <Section id="home" className = "h-full pt-0 mt-0">
             <div className= "container mx-auto h-full">
                 <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
-                    <div className="text-center xl:text-left">
+                    <div className="order-2 xl:order-none text-center xl:text-left">
                         <span className="text-xl"> Software Developer</span>
                         <h1 className="h1 mb-6">
                             Hello I'm <br/> <span className="text-accent-default"> Ruben Dua</span>
@@ -31,7 +31,7 @@ const HomeSection = () => {
                             hover:text-primary hover:transition-all duration-500" />
                         </div>
                     </div>
-                    <div className="flex-1 h-[900px]  xl:ml-12">
+                    <div className=" order-1 xL:order-none flex-1 h-[900px]  xl:ml-12">
                          <Canvas camera={{position: [0, 2, 5]}}>
                          <ambientLight intensity={5}/>
                          <SpotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={2}/>

@@ -7,20 +7,24 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 const Charactor=(props)=> {
     const group = useRef();
-    const { nodes, materials, animations } = useGLTF('/Ruben_Charactor.glb')
+    const { nodes, materials, animations } = useGLTF('/RubenCharacter.glb')
     const { actions } = useAnimations(animations, group)
-     useEffect(() => {
-         const action = Object.values(actions)[0];
-         action.reset().fadeIn(0.5).play();
-         const interval = setInterval(() => {
-            action.stop(); // Stop animation
-            setTimeout(() => {
-                action.reset().fadeIn(0.5).play(); // Restart animation
-            }, 2000); // Pause for 2 seconds before restarting
-        }, action.getClip().duration * 1000 + 2000); // Wait for animation duration + pause time
 
-        return () => clearInterval(interval); // Cleanup on unmount
-      }, [actions]);
+useEffect(() => {
+    if (!actions || Object.keys(actions).length === 0) return;
+
+    const standingUp = actions["standing up"];
+    const hello = actions["hello"];
+    // const standingIdle = actions["idle"];
+
+    standingUp.reset().fadeIn(0.5).play();
+
+    setTimeout(() => {
+        standingUp.fadeOut(0.5);
+        hello.reset().fadeIn(0.5).play();
+    }, (standingUp.getClip().duration - 0.99) * 1000);
+}, [actions]);
+
     return (
         <group ref={group} {...props} dispose={null}>
             <group name="Scene">

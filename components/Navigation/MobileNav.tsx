@@ -7,6 +7,7 @@ import { CiMenuFries } from "react-icons/ci";
 import { DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { Button } from "@/components/ui/button";
+import {FiDownload} from 'react-icons/fi'
 
 const links = [
     { name: "home", path: "#home" },
@@ -73,7 +74,7 @@ const MobileNav = () => {
                                 </a>
                             ))}
                             <a href="/Ruben_Resume_Full_Stack.pdf" download>
-                                <Button title="Download Ruben's Resume">Download</Button>
+                                <Button title="Download Ruben's Resume">Download <FiDownload className="ml-1"/></Button>
                             </a>
                         </nav>
                     </div>

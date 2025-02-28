@@ -2,7 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
 import Nav from "@/components/Navigation/Nav";
-import MobileNav from "@/components/Navigation/MobileNav";
+import MobileNav from "@/components/Navigation/MobileNav"
+import {FiDownload} from 'react-icons/fi'
 
 const Header = () => {
     return (
@@ -18,7 +19,7 @@ const Header = () => {
                 <div className="hidden xl:flex items-center gap-8">
                     <Nav />
                     <a href="/Ruben_Resume_Full_Stack.pdf" download>
-                        <Button title="Download Ruben's Resume"> Download</Button>
+                        <Button title="Download Ruben's Resume"> Download <FiDownload className="ml-1"/> </Button>
                     </a>
                 </div>
 

@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three";
 import { Sphere } from "@react-three/drei";
+import * as THREE from "three";
 
 interface BallProps {
     textureUrl: string; // URL of the logo texture
@@ -15,12 +16,13 @@ const Ball = ({ textureUrl, position }: BallProps) => {
     // Applying rotation to the ball on each frame
     useFrame(() => {
         if (ballRef.current) {
-            ballRef.current.rotation.y += 0.01;  // Rotate the ball around the Y axis slowly
+            ballRef.current.rotation.x += 0.01;
+            ballRef.current.rotation.y += 0.01;
         }
     });
 
     return (
-        <Sphere args={[1, 32, 32]} position={position} ref={ballRef}> {/* Sphere geometry */}
+        <Sphere args={[1, 20, 20]} position={position} ref={ballRef}> {/* Sphere geometry */}
             <meshStandardMaterial map={texture} /> {/* Apply the loaded texture to the ball */}
         </Sphere>
     );

@@ -7,20 +7,21 @@ import { OrbitControls } from "@react-three/drei";  // To control camera with mo
 import Ball from "../Animation/Ball";
 
 const technologies = [
-    { texture: "/logos/Angular.png", position: [-3, 2, 0] },
-    { texture: "/logos/C++.png", position: [0, 2, 0] },
-    { texture: "/logos/C.png", position: [3, 2, 0] },
-    { texture: "/logos/CSS.jpeg", position: [6, 2, 0] },
-    { texture: "/logos/HTML.png", position: [-6, 2, 0] },
-    { texture: "/logos/Java.jpg", position: [-9, 2, 0] },
-    { texture: "/logos/Javascript.png", position: [9, 2, 0] },
-    { texture: "/logos/Nextjs.png", position: [-3, -2, 0] },
-    { texture: "/logos/python.jpeg", position: [0, -2, 0] },
-    { texture: "/logos/R.jpeg", position: [3, -2, 0] },
-    { texture: "/logos/React.png", position: [6, -2, 0] },
-    { texture: "/logos/SQL.png", position: [-6, -2, 0] },
-    { texture: "/logos/Typescript.png", position: [-9, -2, 0] },
+    { texture: "/logos/Angular.png", position: [-3, 2, 0] as [number, number, number] },
+    { texture: "/logos/C++.png", position: [0, 2, 0] as [number, number, number] },
+    { texture: "/logos/C.png", position: [3, 2, 0] as [number, number, number] },
+    { texture: "/logos/CSS.jpeg", position: [6, 2, 0] as [number, number, number] },
+    { texture: "/logos/HTML.png", position: [-6, 2, 0] as [number, number, number] },
+    { texture: "/logos/Java.jpg", position: [-9, 2, 0] as [number, number, number] },
+    { texture: "/logos/Javascript.png", position: [9, 2, 0] as [number, number, number] },
+    { texture: "/logos/Nextjs.png", position: [-3, -2, 0] as [number, number, number] },
+    { texture: "/logos/python.jpeg", position: [0, -2, 0] as [number, number, number] },
+    { texture: "/logos/R.jpeg", position: [3, -2, 0] as [number, number, number] },
+    { texture: "/logos/React.png", position: [6, -2, 0] as [number, number, number] },
+    { texture: "/logos/SQL.png", position: [-6, -2, 0] as [number, number, number] },
+    { texture: "/logos/Typescript.png", position: [-9, -2, 0] as [number, number, number] },
 ];
+
 
 
 const SkillSection = () => {

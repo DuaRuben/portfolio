@@ -18,7 +18,7 @@ const HomeSection = () => {
                         <h1 className="h1 mb-6">
                             Hello I'm <br/> <span className="text-accent-default"> Ruben Dua</span>
                         </h1>
-                        <p className="max-w-[550px] mb-9 text-white/80">
+                        <p className="max-w-[510px] mb-5 text-white/80">
                             I am a Computing Science student at Simon Fraser University.
                             I’m passionate about software development, machine learning, and creating impactful web applications.
                             I love solving problems with code and exploring new technologies.

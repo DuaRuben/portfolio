@@ -1,5 +1,3 @@
-
-import Section from "@/components/Section";
 import HomeSection from "@/components/Home/HomeSection";
 import SkillSection from "@/components/Skill/SkillSection";
 import EducationSection from "@/components/Education/EducationSection";

@@ -27,15 +27,19 @@ const Nav = () => {
                     setActiveSection(visibleSection.target.id);
                 }
             },
-            { rootMargin: "-50% 0px -50% 0px", threshold: 0.1 }
+            { threshold: 0.5 }
         );
 
-        links.forEach((link) => {
-            const section = document.getElementById(link.path);
+        const sections = links.map(link => document.getElementById(link.path));
+
+        sections.forEach(section => {
             if (section) observer.observe(section);
         });
-
-        return () => observer.disconnect();
+        return () => {
+            sections.forEach(section => {
+                if (section) observer.unobserve(section);
+            });
+        };
     }, []);
 
     return (

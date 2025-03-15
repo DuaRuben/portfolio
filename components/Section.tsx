@@ -6,9 +6,9 @@ interface SectionProps {
     className?: string
 }
 
-const Section: React.FC<SectionProps> = ({id, children, className}) => {
+const Section: React.FC<SectionProps> = ({ id, children, className }) => {
     return (
-        <section id={id} className={'min-h-screen flex items-center justify-center p-8 ${className}'}>
+        <section id={id} className={`min-h-screen flex items-center justify-center p-8 ${className}`}>
             {children}
         </section>
     );

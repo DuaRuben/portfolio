@@ -16,7 +16,7 @@ const HomeSection = () => {
                     <div className="order-2 xl:order-none text-center xl:text-left">
                         <span className="text-xl"> Software Developer</span>
                         <h1 className="h1 mb-6">
-                            Hello I&aposm <br/> <span className="text-accent-default"> Ruben Dua</span>
+                            Hello I&apos;m <br/> <span className="text-accent-default"> Ruben Dua</span>
                         </h1>
                         <p className="max-w-[510px] mb-5 text-white/80">
                             I am a Computing Science student at Simon Fraser University.

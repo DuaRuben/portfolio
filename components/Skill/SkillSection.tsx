@@ -2,47 +2,34 @@
 
 import React from 'react';
 import Section from "@/components/Section";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";  // To control camera with mouse
-import Ball from "../Animation/Ball";
+import SkillCard from "@/components/Skill/SkillCard";
 
-const technologies = [
-    { texture: "/logos/Angular.png", position: [-3, 2, 0] as [number, number, number] },
-    { texture: "/logos/C++.png", position: [0, 2, 0] as [number, number, number] },
-    { texture: "/logos/C.png", position: [3, 2, 0] as [number, number, number] },
-    { texture: "/logos/CSS.jpeg", position: [6, 2, 0] as [number, number, number] },
-    { texture: "/logos/HTML.png", position: [-6, 2, 0] as [number, number, number] },
-    { texture: "/logos/Java.jpg", position: [-9, 2, 0] as [number, number, number] },
-    { texture: "/logos/Javascript.png", position: [9, 2, 0] as [number, number, number] },
-    { texture: "/logos/Nextjs.png", position: [-3, -2, 0] as [number, number, number] },
-    { texture: "/logos/python.jpeg", position: [0, -2, 0] as [number, number, number] },
-    { texture: "/logos/R.jpeg", position: [3, -2, 0] as [number, number, number] },
-    { texture: "/logos/React.png", position: [6, -2, 0] as [number, number, number] },
-    { texture: "/logos/SQL.png", position: [-6, -2, 0] as [number, number, number] },
-    { texture: "/logos/Typescript.png", position: [-9, -2, 0] as [number, number, number] },
+
+const skills:{image:string;text:string}[] = [
+    { image: "/logos/Angular.png", text: "Angular" },
+    { image: "/logos/C++.png", text: "C++" },
+    { image: "/logos/C.png",text: "C"  },
+    { image: "/logos/CSS.png", text: "CSS" },
+    { image: "/logos/HTML.png", text: "HTML" },
+    { image: "/logos/Java.png",text: "Java" },
+    { image: "/logos/Javascript.png",text: "Javascript" },
+    { image: "/logos/Nextjs.png", text: "Next" },
+    { image: "/logos/python.png",text: "Python" },
+    { image: "/logos/R.png",text: "R" },
+    { image: "/logos/React.png",text: "React" },
+    { image: "/logos/SQL.png", text: "SQL" },
+    { image: "/logos/Typescript.png",text: "Typescript"  },
 ];
-
 
 
 const SkillSection = () => {
     return (
-        <Section id="skills">
-            <div className="flex flex-col items-cente">
-                <h1 className="text-3xl font-bold mt-[200px] mb-[-300px] ml-[40%]">Tech Stack</h1>
-                <div className="w-full h-[1000px]">
-                    <Canvas camera={{ position: [0, 0, 20] }}> {/* Fixed camera position */}
-                        <ambientLight intensity={0.5} />
-                        <directionalLight position={[2, 2, 2]} />
-                        <OrbitControls enableZoom={false} />
-                        {technologies.map((tech, index) => (
-                            <Ball
-                                key={index}
-                                textureUrl={tech.texture}
-                                position={tech.position}  // Position each ball
-                            />
-                        ))}
-                    </Canvas>
-                </div>
+        <Section id="skills" className="flex flex-col">
+            <div className="text-3xl font-bold text-center mb-5 mt-12"> Sk<span className="text-accent-default/80">ills</span></div>
+            <div className="grid grid-cols-2 xl:grid-cols-5 sm:grid-cols-3 md:grid-cols-4 gap-10 p-4">
+                {skills.map((skill, index) => (
+                    <SkillCard key={index} image={skill.image} text={skill.text} />
+                ))}
             </div>
         </Section>
     );
